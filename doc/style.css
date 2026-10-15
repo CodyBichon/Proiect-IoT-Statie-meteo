@@ -1,0 +1,78 @@
+/* style.css */
+
+.titlu-meteo {
+    color: #4682B4;
+}
+
+.tabel-meteo {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+.antet-tabel {
+    background-color: #ADD8E6;
+}
+
+.tabel-meteo th, .tabel-meteo td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.tabel-meteo th {
+    width: auto;
+}
+
+.container-grafice {
+    display: flex; /* Folosim Flexbox pentru a aranja graficele pe orizontală */
+    flex-wrap: wrap; /* Permitem graficelor să treacă pe rândul următor dacă nu încap */
+    justify-content: space-around; /* Distribuie spațiul în jurul graficelor */
+}
+
+.grafic {
+    width: calc(50% - 20px); /* Fiecare grafic va ocupa aproximativ jumătate din lățime, cu puțin spațiu între ele */
+    margin-bottom: 20px; /* Adaugă puțin spațiu sub fiecare grafic */
+    box-sizing: border-box; /* Include padding și border în lățimea și înălțimea elementului */
+}
+
+.grafic canvas {
+    width: 100% !important; /* Asigură că lățimea canvas-ului se adaptează la container */
+    height: auto !important; /* Menține aspectul proporțional al graficului */
+}
+
+/* Pentru ecrane mai mici, fă graficele să ocupe toată lățimea */
+@media (max-width: 768px) {
+    .grafic {
+        width: 100%;
+    }
+}
+
+select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  background-color: #f8f8f8;
+  appearance: none; /* Elimină aspectul implicit al browserului */
+  -webkit-appearance: none; /* Pentru Safari */
+  -moz-appearance: none; /* Pentru Firefox */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'); /* Adaugă o săgeată personalizată */
+  background-repeat: no-repeat;
+  background-position: right 8px top 50%;
+  padding-right: 30px; /* Spațiu pentru săgeată */
+}
+
+select:focus {
+  border-color: #66afe9;
+  outline: none;
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+}
+
+select option {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #333;
+}
+
